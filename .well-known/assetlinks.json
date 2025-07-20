@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.poplogic.blipin_app.dev",
+      "sha256_cert_fingerprints": [
+        "F6:B2:4E:89:63:D4:CA:70:31:CD:80:5A:4C:77:1E:54:DC:13:F0:5C:BD:28:AB:66:88:68:B8:C1:63:89:EF:E3"
+      ]
+    }
+  }
+]
