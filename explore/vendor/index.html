@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redirecting to Blipin...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: sans-serif;
+        text-align: center;
+        padding: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Redirecting to Blipin App...</h2>
+
+    <script>
+      function getVendorIdFromPath() {
+        // 取得像 /explore/vendor/17 的 path 最後一段
+        const pathSegments = window.location.pathname.split("/");
+        const vendorId =
+          pathSegments[pathSegments.length - 1] ||
+          pathSegments[pathSegments.length - 2];
+        return vendorId;
+      }
+
+      const vendorId = getVendorIdFromPath();
+
+      const deepLink = `intent://explore/vendor/${vendorId}#Intent;scheme=https;package=com.poplogic.blipin_app.dev;end`;
+      const fallback =
+        "https://play.google.com/store/apps/details?id=com.poplogic.blipin_app.dev";
+
+      // redirect to app
+      window.location.href = deepLink;
+
+      // fallback after 2s
+      setTimeout(() => {
+        window.location.href = fallback;
+      }, 2000);
+    </script>
+  </body>
+</html>
